@@ -57,7 +57,7 @@ to the authors of the paper.
 Authors
 ----------------
 
-The NestedAE codes and databaess were developed by Maitreyee Sharma Priyadarshini, Nikhil K. Thota and Rigoberto Hernandez
+The ReLMM codes and databaess were developed by Maitreyee Sharma Priyadarshini, Nikhil K. Thota and Rigoberto Hernandez
 
 Contributors can be found [here](https://github.com/rxhernandez/RELMM/graphs/contributors).
 
