@@ -68,7 +68,7 @@ Citing
 
 If you use database or codes, please cite the following papers:
 
->M. Sharma Priyadarshini, N. K. Thota and R. Hernandez, “ReLMM: Reinforcement Learning-based Material Models"
+>M. Sharma Priyadarshini, N. K. Thota and R. Hernandez, “ReLMM: Reinforcement learning optimizes feature selection in material models"
 
 >N. K. Thota, M. Sharma Priyadarshini and R. Hernandez, “NestedAE: Interpretable Nested Autoencoders for Multi-Scale Material Modelling,” _Mater. Horiz._, **11**, 700, (2024). [(0.1039/D3MH01484C)](http://doi.org/10.1039/D3MH01484C)
 
