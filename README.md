@@ -37,16 +37,14 @@ Documentation
 
 This repository contains code to implement ReLMM. It 
 was created within the CONDA enviroment, and instructions 
-for installing within it are available in the [user guide](https://github.com/rxhernandez/NestedAE/blob/main/user_guide.md), though 
-porting to other environnments (as long as the necessary
-libraries are imported) should also be possible whout additional
+for installing it are available in the 
+[user guide](https://github.com/rxhernandez/ReLMM/blob/main/user_guide.md), 
+though porting to other environnments (as long as the necessary
+libraries are imported) should also be possible without additional
 code.
 
 * For details of the datasets and how we trained ReLMM 
 please refer to the paper, noted in the "Citing" section below.
-
-* For details on how to use ReLMM please refer to the 
-[user_guide.md](https://github.com/rxhernandez/RELMM/blob/main/user_guide.md) in the docs folder.
 
 * Any questions or comments please reach out via email
 to the authors of the paper.
