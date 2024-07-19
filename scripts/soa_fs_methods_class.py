@@ -189,5 +189,7 @@ if __name__=="__main__":
 
     print(mse_test_xgboost)
     print(mse_test_lasso)
+    mse_df = pd.DataFrame([[mse_test_xgboost,mse_test_lasso]],columns=['MSE_xgboost','MSE_lasso'])
     importance_df_xgboost.to_csv(file_name_prefix+'_xgboost.csv')
     importance_df_lasso.to_csv(file_name_prefix+'_lasso.csv')
+    mse_df.to_csv(file_name_prefix+'_soa_mse.csv')
