@@ -19,7 +19,7 @@ learned through the self-playing framework
 in reinforcement learning. 
 Our results are demonstrated on hierarchical 
 synthetic datasets and material datasets,
-both of which demonstrate that ReLMM is able to 
+both of which show that ReLMM is able to 
 find a minimal optimal dataset when compared to 
 state-of-the-art feature selection tools such as 
 LASSO and XGBoost.
