@@ -1,0 +1,8 @@
+.DS_Store
+.ipynb_checkpoints/
+_build/
+__pycache__/
+*/__pycache__/
+*~
+output/
+synthetic_dataset/*.pdf

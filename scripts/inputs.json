@@ -1,6 +1,6 @@
-{"InputType": "Gryffin",
- "InputPath":"/Users/maitreyeesharma/WORKSPACE/PostDoc/EngChem/MatDisc_ML/datasets/",
- "InputFile":"perovskites_GRYFFIN.pkl",
- "OutputDirectory":"/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/RL_FS/output/soa/",
+{"InputType": "SynthData", 
+ "InputPath":"/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/RL_FS/synthetic_dataset/", 
+ "InputFile":"synthetic_data_randomSamples_200_nonlinearf5.csv", 
+ "OutputDirectory":"/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/ReLMM/output/nonlinearf5_run2/",
  "Comment":"InputType: Gryffin, InputPath:/Users/maitreyeesharma/WORKSPACE/PostDoc/EngChem/MatDisc_ML/datasets/, InputFile:perovskites_GRYFFIN.pkl, OutputDirectory:/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/RL_FS/output/new_code_gryffin/ InputType: SynthData InputPath:/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/RL_FS/synthetic_dataset/, InputFile:synthetic_data_randomSamples_200_nonlinearf5.csv, OutputDirectory:/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/RL_FS/output/new_code_nonlinearf5_run2/"
 }
