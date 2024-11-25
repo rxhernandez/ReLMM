@@ -12,16 +12,14 @@ are most correlated to a given material property
 that we want to optimize.
 Here, we introduced, ReLMM, a 
 reinforcement learning-based feature engineering 
-tool that finds an optimal 
- physical features subset that  
-can model a given target material property, 
+tool that finds an optimal physical features subset that can model a given target material property, 
 for example the band gap for a semiconductor.
 In our method, the feature subset is efficiently
 learned through the self-playing framework
 in reinforcement learning. 
 Our results are demonstrated on hierarchical 
 synthetic datasets and material datasets,
-both of which demonstrate that ReLMM is able to 
+both of which show that ReLMM is able to 
 find a minimal optimal dataset when compared to 
 state-of-the-art feature selection tools such as 
 LASSO and XGBoost.
