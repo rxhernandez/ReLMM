@@ -68,7 +68,7 @@ name and comes in a ready to install format with
 pip. Running the below command should install
 ReLMM in your virtual environment.
 
-$ pip install dist/ReLMM-0.1.0-py3-none-any.whl
+$ pip install dist/ReLMM-0.0.1-py3-none-any.whl
 
 To test if ReLMM is installed correctly, open
 the python interpreter terminal and try importing
