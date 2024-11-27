@@ -46,12 +46,15 @@ plt.rcParams['ytick.minor.width'] = 1
 
 
 class soa_methods():
-    def __init__(self, XX, YY, test_size=0.1,random_state=40):
+    def __init__(self, XX, YY, test_size=0.1,random_state=40, **kwargs):
         self.test_size = test_size
         self.random_state = random_state 
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(XX, YY, 
+        self.X_train, self.X_val, self.y_train, self.y_val = train_test_split(XX, YY, 
                                                                                 test_size=self.test_size, 
-                                                                                random_state=self.random_state)
+                                                                                 random_state=self.random_state)
+        if 'X_test' in kwargs.keys():
+            self.X_test = kwargs['X_test']
+            self.y_test = kwargs['y_test']
     
     # XGBoost
     def xgboost(self, X_stand, Y_stand, descriptors, onlyImportant=False, 
