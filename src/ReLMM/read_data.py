@@ -172,8 +172,8 @@ class Inputs:
         It does not need any inputs. 
         Inputs to the class for this case should be: 
         input_type='Gryffin',
-        input_path='/Users/maitreyeesharma/WORKSPACE/PostDoc/EngChem/MatDisc_ML/datasets/',
-        input_file='perovskites_GRYFFIN.pkl'
+        input_path='/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/ReLMM/MHP_dataset/',
+        input_file='perovskites.pkl'
         '''
         
         lookup_df = pickle.load(open(self.filename, 'rb'))

@@ -38,12 +38,16 @@ plt.rcParams['ytick.minor.width'] = 1
 
 
 class SOAFeatureSelectors():
-    def __init__(self, x, y, test_size=0.1,random_state=40):
+    def __init__(self, x, y, test_size=0.1,random_state=40, **kwargs):
         self.test_size = test_size
         self.random_state = random_state
         self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x, y,
                                                                                 test_size=self.test_size,
                                                                                 random_state=self.random_state)
+        
+        if 'X_test' in kwargs.keys():
+            self.x_test = kwargs['X_test']
+            self.y_test = kwargs['y_test']
     
     # XGBoost
     def xgboost(self, descriptors, only_important=False, plot_fig=True, save_fig=False, fig_name='xgboost.pdf'):
