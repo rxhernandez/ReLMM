@@ -1,8 +1,10 @@
 .DS_Store
 .ipynb_checkpoints/
 _build/
+dist/
 __pycache__/
 */__pycache__/
 *~
 output/
 synthetic_dataset/*.pdf
+src/ReLMM/ReLMM.egg-info

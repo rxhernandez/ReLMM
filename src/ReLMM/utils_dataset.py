@@ -1,6 +1,8 @@
+import random
+
 from sklearn.preprocessing import StandardScaler
 import torch
-from torch.utils.data import Dataset, random_split, DataLoader
+from torch.utils.data import Dataset
 import pandas as pd
 
 # Add slicing of the input XX tensor with additional input for the columns picked out by XGBoost or other feature selection methods
@@ -34,9 +36,7 @@ class InputDataset(Dataset):
         x = self.XX[idx,:]
         y = self.YY[idx] #self.YY[idx,:]
         item = {'in_features':x,'labels':y}
-
         return item
-    
 
 def standardize_data(x):
     """
@@ -46,7 +46,6 @@ def standardize_data(x):
     scalerX = StandardScaler().fit(x)
     x_train = scalerX.transform(x)
     x_train_df = pd.DataFrame(x_train,columns=x.columns)
-    
     return x_train, x_train_df,scalerX
 
 

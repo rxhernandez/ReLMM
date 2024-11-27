@@ -30,6 +30,51 @@ features the machine should 'learn' from.
 
 <hr>
 
+Installation
+----------------
+
+ReLMM requires Python 3.11 or later to run.
+We recommend running ReLMM in a python 
+virtual environment or conda. ReLMM can
+be installed together with other python
+packages in the virtual environment or 
+as a standalone package in its own 
+virtual environment. We recommend the latter
+to avoid any dependency conflicts with other
+python packages for your project. Below is
+an example of creating a python virtual
+environment for ReLMM:
+
+$ python3.11 -m venv ~/python_venvs/ReLMM
+
+Once the virtual environment is created
+and activated, you will have to build the 
+ReLMM package from the source distribution (sdist). 
+For this, first ensure you have the build python package.
+
+$ pip install --upgrade build
+
+Once the build package is installed, run 
+the following command in the terminal.
+
+$ python -m build
+
+This command runs the build backend 
+(in this case, setuptools), which copies all the 
+sdist, gets the package dependencies and creates
+a python wheel (.whl) file. The python wheel is 
+essentially a zip file with a specially formatted
+name and comes in a ready to install format with
+pip. Running the below command should install
+ReLMM in your virtual environment.
+
+$ pip install dist/ReLMM-0.1.0-py3-none-any.whl
+
+To test if ReLMM is installed correctly, open
+the python interpreter terminal and try importing
+ReLMM. The script main.py shows how to use ReLMM 
+and recreate the results from the paper.
+
 Documentation
 ----------------
 

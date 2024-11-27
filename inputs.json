@@ -1,0 +1,6 @@
+{"InputType":"SynthData", 
+ "InputPath":"synthetic_dataset", 
+ "InputFile":"synthetic_data_randomSamples_200_nonlinearf5.csv", 
+ "OutputDirectory":"output",
+ "Comments":""
+}
