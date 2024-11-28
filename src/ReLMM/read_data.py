@@ -1,36 +1,16 @@
-import sklearn
-import numpy as np     
-import csv 
-import copy 
-import random 
-import pandas as pd
 import pickle
+import copy
 
-# Scikit learn packages for model fitting and scores
-from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import cross_validate
-from sklearn.model_selection import train_test_split
+import numpy as np
+import pandas as pd
 
-# XGBoost packages
-import xgboost as xgb
-from xgboost.sklearn import XGBRegressor
-
-# User defined files and classes
-import sys
-# import inputdata_class as inputs
-import utils_dataset as utilsd
-
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-
-class inputs:
-    def __init__(self,input_type='PerovAlloys',input_path='/Users/maitreyeesharma/WORKSPACE/PostDoc/EngChem/HEMI/chan_code/perovs_dft_ml/',input_file='HSE_data.csv',add_target_noise = False):
+class Inputs:
+    def __init__(self, input_type, input_path, input_file, add_target_noise = False):
         self.input_type = input_type
         self.input_path = input_path
         self.input_file = input_file
         self.add_target_noise = add_target_noise
-        self.filename   = self.input_path +'/'+ self.input_file
+        self.filename = self.input_path +'/'+ self.input_file
         
     def read_inputs(self):
         # if model_input.verbose:
@@ -38,22 +18,24 @@ class inputs:
         
         # Add options for different datasets that we want to read
         if self.input_type == 'PerovAlloys':
-            XX, YY, descriptors = self.read_perovalloys()
+            x, y, descriptors = self.read_perovalloys()
         elif self.input_type == 'PALSearch':
-            XX, YY, descriptors = self.read_palsearch()
+            x, y, descriptors = self.read_palsearch()
         elif self.input_type == 'Gryffin':
-            XX, YY, descriptors = self.read_gryffin()            
+            x, y, descriptors = self.read_gryffin()
         elif self.input_type == 'MPEA':
-        	XX, YY, descriptors = self.read_MPEA()
+            x, y, descriptors = self.read_MPEA()
         elif self.input_type == 'MgAlloys':
-        	XX, YY, descriptors = self.read_MgAlloys()   
+            x, y, descriptors = self.read_MgAlloys()
         elif self.input_type == 'AlAlloys':
-        	XX, YY, descriptors = self.read_AlAlloys()               
+            x, y, descriptors = self.read_AlAlloys()
         elif self.input_type == 'COF':
-            XX, YY, descriptors = self.read_COF()
+            x, y, descriptors = self.read_COF()
         elif self.input_type == 'SynthData':
-            XX, YY, descriptors = self.read_SynthData()
-        return XX, YY, descriptors   
+            x, y, descriptors = self.read_SynthData()
+        else:
+            raise ValueError('Input type not recognized')
+        return x, y, descriptors
     
     def read_MPEA(self):
         '''

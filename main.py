@@ -8,38 +8,35 @@ import torch.optim as optim
 from sklearn.model_selection import train_test_split
 
 # User defined files and classes
-import sys
-from read_data import inputs
-import utils_dataset as utilsd
-from environment import Environment
-from qlearning import QNetwork
-from predictor_models import predictor_models
+from ReLMM.read_data import Inputs
+from ReLMM.utils_dataset import standardize_data
+from ReLMM.environment import Environment
+from ReLMM.qlearning import QNetwork
+from ReLMM.predictors import Predictors
 
 ## Main Function
 
 # Reading the input json file with dataset filename and path information
-with open('inputs.json', "r") as f:
+with open('inputs.json', "r", encoding='utf-8') as f:
     input_dict = json.load(f)
 
-run_folder = input_dict['RunFolder']
 input_type = input_dict['InputType']
 input_path = input_dict['InputPath']
 input_file = input_dict['InputFile']
 output_dir = input_dict['OutputDirectory']
 
 # Create a new output directory if it does not exist
-isExist = os.path.exists(output_dir)
-if not isExist:
+if not os.path.exists(output_dir):
     os.makedirs(output_dir)
     print("The new directory is created!", output_dir)
 
-input_data = inputs(input_type=input_type,
-                           input_path=input_path,
-                           input_file=input_file)
+input_data = Inputs(input_type=input_type,
+                    input_path=input_path,
+                    input_file=input_file)
 
 X_data, Y_data, descriptors = input_data.read_inputs()
-X_stand_all, X_stand_df_all, scalerX = utilsd.standardize_data(X_data)
-Y_stand_all, Y_stand_df_all, scalerY = utilsd.standardize_data(pd.DataFrame({'target':Y_data[:,0]}))
+X_stand_all, X_stand_df_all, scalerX = standardize_data(X_data)
+Y_stand_all, Y_stand_df_all, scalerY = standardize_data(pd.DataFrame({'target':Y_data[:,0]}))
 X_stand_df, X_test_df, Y_stand_df, Y_test_df = train_test_split(X_stand_df_all, Y_stand_df_all, test_size=0.1, random_state=0)
 X_stand, X_test, Y_stand, Y_test = train_test_split(X_stand_all, Y_stand_all, test_size=0.1, random_state=0)
 
@@ -51,7 +48,7 @@ state_size = total_num_features  # Size of the state space
 N_agents = total_num_features # Number of agents
 action_size = 2  # Number of possible actions
 N_steps = 100 # Number of steps to take per episode
-predictor_model = predictor_models()
+predictor_model = Predictors()
 
 # Hyperparameters
 epsilon = 1.0  # Exploration rate
@@ -72,7 +69,7 @@ for i_agent in range(N_agents):
     agent_optimizer[optimizer_name] = optim.Adam(agent_model[model_name].parameters(), lr=learning_rate)
 
 # Training loop
-total_episodes = 1000
+total_episodes = 3
 
 for episode in range(total_episodes):
     state = env.reset()
@@ -131,7 +128,7 @@ for episode in range(total_episodes):
 # Save QNetwork Models
 for i_agent in range(N_agents):
     model_name = 'agent'+str(i_agent)+'_model'
-    saveModel_filename = output_dir+model_name+'.pt'
+    saveModel_filename = f'{output_dir}/{model_name}.pt'
     torch.save(agent_model[model_name].state_dict(), saveModel_filename)
     
     
@@ -157,5 +154,5 @@ while True:
         break
 
 importance_df_rl = pd.DataFrame.from_dict(data=feature_importance_dict_rl, orient='index')
-importance_df_rl.to_csv(output_dir+'rl.csv')
+importance_df_rl.to_csv(f'{output_dir}/rl.csv')
 print(f"Test Total Rewards: {total_rewards}, state: {state}")

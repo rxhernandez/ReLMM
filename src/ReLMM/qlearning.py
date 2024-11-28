@@ -1,7 +1,5 @@
-import numpy as np
 import torch
 import torch.nn as nn
-import torch.optim as optim
 
 # Define the Q-value policy network for each agent
 class QNetwork(nn.Module):
