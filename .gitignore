@@ -6,3 +6,4 @@ __pycache__/
 *~
 output/
 synthetic_dataset/*.pdf
+MHP_dataset/perovskites_GRYFFIN.pkl
