@@ -55,6 +55,9 @@ class soa_methods():
         if 'X_test' in kwargs.keys():
             self.X_test = kwargs['X_test']
             self.y_test = kwargs['y_test']
+        else:
+            self.X_test = self.X_val
+            self.y_test = self.y_val
     
     # XGBoost
     def xgboost(self, X_stand, Y_stand, descriptors, onlyImportant=False, 
