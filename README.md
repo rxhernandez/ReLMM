@@ -70,10 +70,13 @@ ReLMM in your virtual environment.
 
 $ pip install dist/ReLMM-0.0.1-py3-none-any.whl
 
+Code Testing and Confirmation
+----------------
+
 To test if ReLMM is installed correctly, 
-please run the unittests described under
-the tests directory. An example is 
-shown below testing the environment module:
+please run the unittests included in 
+the tests directory. To test the enviroment
+module, for example, run:
 
 $ python test_environment.py
 
