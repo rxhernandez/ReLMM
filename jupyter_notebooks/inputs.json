@@ -1,0 +1,8 @@
+{"RunFolder":"/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/ReLMM/jupyter_notebooks/",
+ "InputType": "Gryffin", 
+ "InputPath":"/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/ReLMM/MHP_dataset/",
+ "InputFile":"perovskites.pkl",
+ "TestFile":"",
+ "OutputDirectory":"/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/ReLMM/output/gryffin_correct_dataset_allpoints/",
+ "Comment":"InputType: Gryffin, InputPath:/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/ReLMM/MHP_dataset/, InputFile:perovskites.pkl, OutputDirectory:/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/RL_FS/output/gryffin_correct_dataset/,      InputType: SynthData, InputPath:/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/RL_FS/synthetic_dataset/, InputFile:synthetic_data_randomSamples_200_nonlinearf5.csv, TestFile:test_synthetic_data_randomSamples_89_nonlinearf5.csv, OutputDirectory:/Users/maitreyeesharma/WORKSPACE/PostDoc/Chemistry/SPIRAL/codes/RL/RL_FS/output/new_code_nonlinearf5_run2/"
+}
