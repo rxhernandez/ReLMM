@@ -70,10 +70,12 @@ ReLMM in your virtual environment.
 
 $ pip install dist/ReLMM-0.0.1-py3-none-any.whl
 
-To test if ReLMM is installed correctly, open
-the python interpreter terminal and try importing
-ReLMM. The script main.py shows how to use ReLMM 
-and recreate the results from the paper.
+To test if ReLMM is installed correctly, 
+please run the unittests described under
+the tests directory. An example is 
+shown below testing the environment module:
+
+$ python test_environment.py
 
 Documentation
 ----------------
